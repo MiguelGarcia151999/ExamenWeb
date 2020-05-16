@@ -10,6 +10,7 @@ if (mysqli_connect_error()) {
 	trigger_error("Error to conecte to MySQL");
 }
 
+
 if (isset($_POST['user']) && isset($_POST['pass'])) {
 	$usuario = $_POST['user'];
 	$password = $_POST['pass'];
