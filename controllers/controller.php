@@ -17,7 +17,11 @@ class MvcController{
        if (isset($_GET["action"])) { #isset => significa que trae contenido
         
         $enlacesController = $_GET["action"];
-
+asddddddddddda
+shm_detachas
+<datagrid>shm_detachasd
+as
+<datagrid>asd</datagrid></datagrid>
         }else{
          $enlacesController = "inicio";
         } 
