@@ -4,7 +4,6 @@ class MvcController{
 
      #Llamada a la plantilla
     #---------------------------------------------------
-
     public function pagina(){
 
         #se usa para invocar el archivo que contiene codigo html.
@@ -23,7 +22,7 @@ class MvcController{
          $enlacesController = "inicio";
         } 
 
-         
+        #Migue aqui no va la instancia
         $instancia = new EnlacesPaginas(); #tengo que tener esta instacia para poder llamar el metodo, amenos que sea estatico el metodo
         $respuesta = $instancia->enlacesPaginasModel($enlacesController);
         include $respuesta;
@@ -31,6 +30,4 @@ class MvcController{
     }
 
 }
-
-
 ?>
