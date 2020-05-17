@@ -40,6 +40,23 @@
       })
     }
 
+    function signup() {
+      const usuario = document.getElementById('newuser').value
+      const pass = document.getElementById('newpass').value
+      const mail = document.getElementById('newemail').value
+      console.log(pass)
+      axios.post('./../api/views/registrousuario.php', {
+        newdata: {
+          usuario: usuario,
+          pass: pass
+        }
+      }).then(function (res) {
+        
+        console.log(res.data)
+        
+      })
+    }
+
   </script>
   <div class="contenedor-form">
     <div class="toggle" onclick="cambiarTexto()">
@@ -58,10 +75,10 @@
     <div class="formulario">
         <h2>Crear tu Cuenta</h2>
         <form action="#">
-            <input type="text" name="usuario" placeholder="Usuario" required>
-            <input type="password" placeholder="Contraseña" required>
-            <input type="email" name="email" placeholder="Correo Electronico" required>
-            <input type="button" value="Registrarse">
+            <input type="text" id ="newuser"  placeholder="Usuario" required>
+            <input type="password" id="newpass"placeholder="Contraseña" required>
+            <input type="email" id="newemail" placeholder="Correo Electronico" required>
+            <input type="button" value="Registrarse" onclick="signup">
         </form>
     </div>
 
