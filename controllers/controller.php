@@ -13,7 +13,7 @@ class MvcController{
     #Interaccion del usuario
     #---------------------------------------------------
     public function enlacesPaginasController(){
-       
+
        if (isset($_GET["action"])) { #isset => significa que trae contenido
         
         $enlacesController = $_GET["action"];
