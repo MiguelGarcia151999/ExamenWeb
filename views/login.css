@@ -1,0 +1,23 @@
+#contenedor-notas{
+  display: flex ;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.contenedor-noticia{
+  border-radius: 20px;
+  background-color: aqua;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 20px;
+  opacity: 0.8;
+  padding: 10px;
+  text-align: center;
+  animation: ease 1s;
+  width: 200px;
+}
+.contenedor-noticia h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contenedor-noticia:hover{
+  background-color: burlywood;
+}

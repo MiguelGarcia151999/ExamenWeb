@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+  <script type="text/javascript">
+
+    function login() {
+      const usuario = document.getElementById('user').value
+      const pass = document.getElementById('pass').value
+      console.log(pass)
+      axios.post('./../api/views/iniciarSesion.php', {
+        data: {
+          usuario: usuario,
+          pass: pass
+        }
+      }).then(function (res) {
+        console.log(res.data)
+        console.log(res.body)
+      })
+    }
+
+  </script>
+
+  <div class="formulario">
+    <h2>Iniciar Sesión</h2>
+    <form>
+      <input type="text" id="user" placeholder="&#128100;  Usuario" required>
+      <input type="password" id="pass" placeholder="&#128272;  Contraseña" required>
+      <input type="button" value="Iniciar Sesión" onclick="login()">
+    </form>
+  </div>
+
+  <div id='contenedor-notas'>
+
+  </div>
+
+  <script type='text/javascript'>
+
+    axios.get('./../api/views/obtenerNotas.php').then(function (res) {
+      const notas = res.data.notas
+      const elemento = document.getElementById("contenedor-notas")
+      console.log(notas)
+      
+      elemento.innerHTML = notas.map(function (nota) {
+        return ('<div class="contenedor-noticia"> <h1>' + nota.titulo + '</h1> <h2>' + nota.descripcion + '</h2> </div>')
+      }).join('')
+    })
+
+  </script>
+
+
+
+</body>
+
+</html>
