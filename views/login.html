@@ -14,6 +14,16 @@
 
   <script type="text/javascript">
 
+
+    function cambiarTexto(){
+      const elemento = document.getElementById('span-texto')
+      if(elemento.innerText === 'Crear Cuenta'){
+        elemento.innerText = 'Iniciar Sesion'
+      }else{
+        elemento.innerText = 'Crear Cuenta'
+      }
+    }
+
     function login() {
       const usuario = document.getElementById('user').value
       const pass = document.getElementById('pass').value
@@ -31,8 +41,8 @@
 
   </script>
   <div class="contenedor-form">
-    <div class="toggle">
-        <span>Crear Cuenta</span>
+    <div class="toggle" onclick="cambiarTexto()">
+        <span id='span-texto'>Crear Cuenta</span>
     </div>
 
     <div class="formulario">
