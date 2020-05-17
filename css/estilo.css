@@ -82,7 +82,7 @@ body{
     border-bottom: 4px solid #3efe31;
 }
 
-.contenedor-form input[type="submit"]{
+.contenedor-form input[type="button"]{
     background: #177d75;
     color: #ffffff;
     border: none;
