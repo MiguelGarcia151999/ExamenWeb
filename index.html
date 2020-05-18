@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMEZONE</title>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <script>
+    function cerrarSesion() {
+      sessionStorage.removeItem('sesion')
+      document.location.href = './views/login.html'
+    }
+    if (sessionStorage.getItem('sesion') !== null) {
+      console.log('sesion iniciada')
+
+    } else {
+      console.log('sesion sin iniciar')
+      document.location.href = './views/login.html'
+    }
+  </script>
+  <div class="container">
+    <div class="menu">
+      <div class="logoZone">
+        <p>GAMEZONE</p>
+      </div>
+      <div class="menuTop">
+        <a href="" class="selected">NOTICIAS</a>
+        <a href="">VIDEJUEGOS</a>
+        <a href="">HARDWARE Y TECNOLOGÍA</a>
+      </div>
+      <div class="cerrarSesion">
+        <a href="" onclick="cerrarSesion()">SALIR</a>
+      </div>
+    </div>
+    <div class="container-main">
+      <div class="mainNotices">
+        <div class="noticiaTop" id='imagen1'>
+          <p>Lorem ipsum dolor sit.</p>
+        </div>
+        <div class="noticiaTop" id='imagen2'>
+          <p>Lorem ipsum dolor sit.</p>
+        </div>
+        <div class="noticiaTop" id='imagen3'>
+          <p>Lorem ipsum dolor sit.</p>
+        </div>
+        <div class="noticiaTop" id='imagen4'>
+          <p>Lorem ipsum dolor sit.</p>
+        </div>
+      </div>
+      <div class="destacados">
+        <div class="title-destacado">Destacados</div>
+        <div class="noticias-detacados">
+          <div class="noticia-destacados">
+            <img src="./img/thumb-1920-186993.jpg" alt="">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, odit!</p>
+          </div>
+          <div class="noticia-destacados">
+            <img src="./img/thumb-1920-186993.jpg" alt="">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, odit!</p>
+          </div>
+          <div class="noticia-destacados">
+            <img src="./img/thumb-1920-186993.jpg" alt="">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, odit!</p>
+          </div>
+          <div class="noticia-destacados">
+            <img src="./img/thumb-1920-186993.jpg" alt="">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, odit!</p>
+          </div>
+          <div class="noticia-destacados">
+            <img src="./img/thumb-1920-186993.jpg" alt="">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, odit!</p>
+          </div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="game">
+          <img src="./img/main-qimg-9cb0451fb6878002d8fc29e591053c62.png" alt="">
+          <p>XCOM 2</p>
+        </div>
+        <div class="game">
+          <img src="./img/watch-dogs-ubisoft-cover-art.jpg" alt="">
+          <p>Watch Dogs</p>
+        </div>
+        <div class="game">
+          <img src="./img/2079822-box_disland.png" alt="">
+          <p>Dead Island</p>
+        </div>
+        <div class="game">
+          <img src="./img/44.jpg" alt="">
+          <p>Crysis</p>
+        </div>
+        <div style="text-align: right; color: white; margin-top: 10px; cursor: pointer;">
+          Mas juegos >>
+        </div>
+      </div>
+      <div class="hardwaretecnologia">
+        <div class="title-destacado">hardware y tecnología</div>
+        <div class="notas">
+          <div class="nota">
+            <img src="./img/half life (1).jpg" alt="">
+            <div class="text-nota">
+              <h2>Lorem ipsum dolor sit.</h2>
+              <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, unde. Quasi quibusdam voluptatum ab
+                nobis sed aut reprehenderit doloremque corrupti, quam illum perferendis tempora inventore amet
+                distinctio, fugit optio. Tempore.</h4>
+              <p>Hace 2 dias | 202 Comentarios</p>
+            </div>
+          </div>
+          <div class="nota">
+            <img src="./img/the witcher.jpg" alt="">
+            <div class="text-nota">
+              <h2>Lorem ipsum dolor sit.</h2>
+              <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, unde. Quasi quibusdam voluptatum ab
+                nobis sed aut reprehenderit doloremque corrupti, quam illum perferendis tempora inventore amet
+                distinctio, fugit optio. Tempore.</h4>
+              <p>Hace 2 dias | 202 Comentarios</p>
+            </div>
+          </div>
+          <div class="nota">
+            <img src="./img/doom.jpg" alt="">
+            <div class="text-nota">
+              <h2>Lorem ipsum dolor sit.</h2>
+              <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, unde. Quasi quibusdam voluptatum ab
+                nobis sed aut reprehenderit doloremque corrupti, quam illum perferendis tempora inventore amet
+                distinctio, fugit optio. Tempore.</h4>
+              <p>Hace 2 dias | 202 Comentarios</p>
+            </div>
+          </div>
+          <div class="nota">
+            <img src="./img/half life (1).jpg" alt="">
+            <div class="text-nota">
+              <h2>Lorem ipsum dolor sit.</h2>
+              <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, unde. Quasi quibusdam voluptatum ab
+                nobis sed aut reprehenderit doloremque corrupti, quam illum perferendis tempora inventore amet
+                distinctio, fugit optio. Tempore.</h4>
+              <p>Hace 2 dias | 202 Comentarios</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <h1>GAMEZONE</h1>
+      <h3>TODOS LOS DERECHOS RESERVADOS</h3>
+      <h3>2020</h3>
+    </div>
+
+
+
+  </div>
+</body>
+
+</html>

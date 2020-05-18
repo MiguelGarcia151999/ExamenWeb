@@ -14,7 +14,27 @@
 
   <script type="text/javascript">
 
-
+    function registrarse(){
+      const usuario = document.getElementById('newUser').value
+      const pass = document.getElementById('newPass').value
+      const email = document.getElementById('Email').value
+      axios.post('./../api/views/crearCuenta.php', {
+        data: {
+          usuario: usuario,
+          pass: pass,
+          email: email
+        }
+      }).then(function (res) {
+        console.log(res.data)
+        if(res.data === 1){
+          document.location.reload()
+        }
+      })
+      document.getElementById('span-texto').click()
+      document.getElementById('newUser').value = ''
+      document.getElementById('newPass').value = ''
+      document.getElementById('Email').value = ''
+    }
     function cambiarTexto(){
       const elemento = document.getElementById('span-texto')
       if(elemento.innerText === 'Crear Cuenta'){
@@ -23,7 +43,6 @@
         elemento.innerText = 'Crear Cuenta'
       }
     }
-
     function login() {
       const usuario = document.getElementById('user').value
       const pass = document.getElementById('pass').value
@@ -35,7 +54,10 @@
         }
       }).then(function (res) {
         console.log(res.data)
-        
+        if(res.data === 1){
+          sessionStorage.setItem('sesion', '1')
+          document.location.href = './../index.html'
+        }
       })
     }
 
@@ -57,10 +79,10 @@
     <div class="formulario">
         <h2>Crear tu Cuenta</h2>
         <form action="#">
-            <input type="text" name="usuario" placeholder="Usuario" required>
-            <input type="password" placeholder="Contraseña" required>
-            <input type="email" name="email" placeholder="Correo Electronico" required>
-            <input type="button" value="Registrarse">
+            <input type="text" id="newUser" placeholder="Usuario" required>
+            <input type="password" id="newPass" placeholder="Contraseña" required>
+            <input type="email" id="Email" placeholder="Correo Electronico" required>
+            <input type="button" onclick="registrarse()" value="Registrarse">
         </form>
     </div>
 
@@ -75,20 +97,6 @@
   <div id='contenedor-notas'>
 
   </div>
-
-  <script type='text/javascript'>
-
-    axios.get('./../api/views/obtenerNotas.php').then(function (res) {
-      const notas = res.data.notas
-      const elemento = document.getElementById("contenedor-notas")
-      console.log(notas)
-      
-      elemento.innerHTML = notas.map(function (nota) {
-        return ('<div class="contenedor-noticia"> <h1>' + nota.titulo + '</h1> <h2>' + nota.descripcion + '</h2> </div>')
-      }).join('')
-    })
-
-  </script>
 
 
 

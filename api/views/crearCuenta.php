@@ -1,14 +1,10 @@
 <?php
-
-#Recibir usuario y contrase;a por POST
-#Responder con un 1 o un 0
-#echo 1;
-
 $_POST = json_decode(file_get_contents("php://input"),true);
-
 $datos = $_POST['data'];
 $usuario = $datos['usuario'];
 $pass = $datos['pass'];
+$email = $datos['email'];
+echo $usuario;
 
 #conexion
 $host = "localhost";
@@ -22,11 +18,9 @@ if (mysqli_connect_error()) {
 }
 
 if (isset($usuario) && isset($pass)) {
-	$query = "Select id from usuarios where Usuario = '$usuario' and Password = '$pass'";
+	$query = "INSERT INTO usuarios (Usuario, Password, Rol, Email) values ('$usuario', '$pass', 'usuario', '$email')";
 	$resultado = mysqli_query($connection, $query);
-	$data = array();
-	while ($row = mysqli_fetch_row($resultado))$data = $row;
-	if ($data != null) {
+	if ($resultado == 1) {
 		echo 1; # en caso de que sea correcto da 1
 	}else{
 		echo 0; # si no hay nada da 0
